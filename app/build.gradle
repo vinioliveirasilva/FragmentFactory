@@ -46,12 +46,15 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
 
+
     // Koin for Android
     implementation "org.koin:koin-android:$koin_version"
     // or Koin for Lifecycle scoping
     implementation "org.koin:koin-android-scope:$koin_version"
     // or Koin for Android Architecture ViewModel
     implementation "org.koin:koin-android-viewmodel:$koin_version"
+    // or Koin for Android Architecture Fragment
+    implementation "org.koin:koin-androidx-fragment:$koin_version"
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

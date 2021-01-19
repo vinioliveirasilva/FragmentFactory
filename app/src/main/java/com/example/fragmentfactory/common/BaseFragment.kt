@@ -33,4 +33,15 @@ abstract class BaseFragment(
         unloadKoinModules(fragmentModules())
         super.onDestroy()
     }
+
+    fun onBackPressed() {
+        activity?.supportFragmentManager?.run {
+            if(fragments.size == LAST_FRAG_SIZE) activity?.finish()
+            else beginTransaction().remove(fragments.last()).commit()
+        }
+    }
+
+    companion object {
+        private const val LAST_FRAG_SIZE = 1
+    }
 }

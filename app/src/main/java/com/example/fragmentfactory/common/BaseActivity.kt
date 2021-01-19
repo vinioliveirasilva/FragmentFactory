@@ -28,6 +28,11 @@ abstract class BaseActivity(
         super.onDestroy()
     }
 
+    //Passa a responsabilidade do voltar (Hardware) para o fragment
+    override fun onBackPressed() {
+        (supportFragmentManager.fragments.lastOrNull() as? BaseFragment)?.onBackPressed() ?: super.onBackPressed()
+    }
+
     fun startActivityAndFinish(intent: Intent) {
         startActivity(intent)
         finish()
