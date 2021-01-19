@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.fragmentfactory.R
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -30,5 +31,20 @@ abstract class BaseActivity(
     fun startActivityAndFinish(intent: Intent) {
         startActivity(intent)
         finish()
+    }
+
+    //Passar para dentro do fragmentManager
+    fun Fragment.add() {
+        supportFragmentManager.beginTransaction().add(
+            R.id.fragment_container,
+            this
+        ).commit()
+    }
+
+    fun Fragment.replace() {
+        supportFragmentManager.beginTransaction().replace(
+            R.id.fragment_container,
+            this
+        ).commit()
     }
 }

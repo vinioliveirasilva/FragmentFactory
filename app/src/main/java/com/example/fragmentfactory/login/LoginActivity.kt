@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.fragmentfactory.R
 import com.example.fragmentfactory.common.BaseActivity
+import com.example.fragmentfactory.login.view.LoginFragment
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -16,6 +17,7 @@ class LoginActivity: BaseActivity(R.layout.activity_login) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.title = "Login"
+        LoginFragment().add()
     }
 
     companion object {

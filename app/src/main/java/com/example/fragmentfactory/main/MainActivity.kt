@@ -7,7 +7,7 @@ import com.example.fragmentfactory.R
 import com.example.fragmentfactory.common.BaseActivity
 import com.example.fragmentfactory.home.HomeActivity
 import com.example.fragmentfactory.login.LoginActivity
-import com.example.fragmentfactory.main.Provider.SecurityStorage
+import com.example.fragmentfactory.main.provider.SecurityStorage
 import org.koin.android.ext.android.inject
 import org.koin.core.module.Module
 import org.koin.core.parameter.parametersOf
