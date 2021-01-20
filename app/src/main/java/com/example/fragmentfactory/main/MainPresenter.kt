@@ -1,6 +1,6 @@
 package com.example.fragmentfactory.main
 
-import com.example.fragmentfactory.main.Provider.SecurityStorage
+import com.example.fragmentfactory.main.provider.SecurityStorage
 
 class MainPresenter(
     private val view: MainActivity,
@@ -9,7 +9,7 @@ class MainPresenter(
 
     fun initialize() {
         view.run {
-            if(storage.isUserLogged()) callHome()
+            if(storage.isUserLogged) callHome()
             else callLogin()
         }
     }

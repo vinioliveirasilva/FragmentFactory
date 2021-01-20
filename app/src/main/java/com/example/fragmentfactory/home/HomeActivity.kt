@@ -8,7 +8,7 @@ import com.example.fragmentfactory.common.BaseActivity
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-class HomeActivity: BaseActivity(R.layout.activity_home) {
+class HomeActivity: BaseActivity(R.layout.activity_container) {
     override fun activityModules(): Module {
         return module {  }
     }
