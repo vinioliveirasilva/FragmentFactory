@@ -1,8 +1,12 @@
 package com.example.fragmentfactory.main.provider
 
-class SecurityStorage {
+interface SecurityStorage {
+    fun getLoggedUser()
+    var isUserLogged: Boolean
+}
 
-    fun getLoggedUser() {}
+class SecurityStorageImpl : SecurityStorage {
 
-    fun isUserLogged() = false
+    override fun getLoggedUser() {}
+    override var isUserLogged: Boolean = false
 }

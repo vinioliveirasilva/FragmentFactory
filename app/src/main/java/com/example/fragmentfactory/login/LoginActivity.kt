@@ -9,7 +9,7 @@ import com.example.fragmentfactory.login.view.LoginFragment
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-class LoginActivity: BaseActivity(R.layout.activity_login) {
+class LoginActivity: BaseActivity(R.layout.activity_container) {
     override fun activityModules(): Module {
         return module {  }
     }

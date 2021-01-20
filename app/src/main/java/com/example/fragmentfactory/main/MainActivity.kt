@@ -13,7 +13,7 @@ import org.koin.core.module.Module
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 
-class MainActivity: BaseActivity(R.layout.activity_main) {
+class MainActivity: BaseActivity(R.layout.activity_container) {
 
     private val presenter: MainPresenter by inject { parametersOf(this) }
 
@@ -25,8 +25,6 @@ class MainActivity: BaseActivity(R.layout.activity_main) {
                     storage = get()
                 )
             }
-
-            factory { SecurityStorage() }
         }
     }
 

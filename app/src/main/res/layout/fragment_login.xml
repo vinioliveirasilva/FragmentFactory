@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -28,12 +28,13 @@
         <TextView
             android:id="@+id/tv_email_input_hint"
             android:layout_width="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="6dp"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Email: "/>
+            android:textSize="18sp"
+            android:text="Email: "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_email_input"
@@ -58,12 +59,13 @@
         <TextView
             android:id="@+id/tv_password_input_hint"
             android:layout_width="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="6dp"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=" Pass: "/>
+            android:text=" Pass: "
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_password_input"
@@ -86,5 +88,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_password_input"
         app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99F5F5F5"
+        android:focusable="true"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

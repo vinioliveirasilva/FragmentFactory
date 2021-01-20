@@ -9,7 +9,7 @@ class MainPresenter(
 
     fun initialize() {
         view.run {
-            if(storage.isUserLogged()) callHome()
+            if(storage.isUserLogged) callHome()
             else callLogin()
         }
     }
