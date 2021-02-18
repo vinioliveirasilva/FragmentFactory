@@ -2,17 +2,22 @@ package com.example.fragmentfactory.common
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.fragmentfactory.R
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
+import kotlin.properties.Delegates
 
 abstract class BaseActivity(
     @LayoutRes val layoutId: Int
 ) : AppCompatActivity() {
+
+    var loading: View by Delegates.notNull()
 
     abstract fun activityModules(): Module
 
@@ -21,11 +26,21 @@ abstract class BaseActivity(
         super.onCreate(savedInstanceState)
         setContentView(layoutId)
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        loading = findViewById(R.id.loading)
     }
 
     override fun onDestroy() {
         unloadKoinModules(activityModules())
         super.onDestroy()
+    }
+
+    fun hideLoading() {
+        loading.isVisible = false
+    }
+
+    fun showLoading() {
+        loading.isVisible = true
     }
 
     //Passa a responsabilidade do voltar (Hardware) para o fragment

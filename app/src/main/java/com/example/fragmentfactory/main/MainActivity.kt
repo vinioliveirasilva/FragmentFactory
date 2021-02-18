@@ -32,20 +32,7 @@ class MainActivity: BaseActivity(R.layout.activity_container) {
         super.onCreate(savedInstanceState)
         presenter.initialize()
     }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            //R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
+    
     fun callHome() {
         startActivityAndFinish(HomeActivity.newIntent(this))
     }

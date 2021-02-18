@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
+import kotlin.properties.Delegates
 
 abstract class BaseFragment(
     @LayoutRes val layoutId: Int
@@ -32,6 +34,14 @@ abstract class BaseFragment(
     override fun onDestroy() {
         unloadKoinModules(fragmentModules())
         super.onDestroy()
+    }
+
+    fun hideLoading() {
+        (activity as? BaseActivity)?.loading?.isVisible = false
+    }
+
+    fun showLoading() {
+        (activity as? BaseActivity)?.loading?.isVisible = true
     }
 
     fun onBackPressed() {

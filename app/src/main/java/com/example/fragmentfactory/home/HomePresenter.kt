@@ -1,22 +1,20 @@
-package com.example.fragmentfactory.login.presenter
+package com.example.fragmentfactory.home
 
 import android.util.Log
-import com.example.fragmentfactory.login.view.LoginFragment
 import com.example.fragmentfactory.main.provider.SecurityStorage
 import com.example.fragmentfactory.network.AuthProvider
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
-class LoginPresenter(
-    private val view: LoginFragment,
+class HomePresenter(
+    private val view: HomeActivity,
     private val authProvider: AuthProvider,
     private val secureStorage: SecurityStorage
 ) {
-
     private val tag = this::class.java.canonicalName
 
-    fun doOnLogin(email: String, pass: String) {
-        authProvider.doLogin(email, pass)
+    fun doOnLogout() {
+        authProvider.doLogout()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { view.showLoading() }
@@ -24,15 +22,11 @@ class LoginPresenter(
             .doOnError { Log.e(tag, "Erro na chamada de rede") }
             .subscribe {
                 if(it) {
-                    secureStorage.isUserLogged = true
-                    view.callHome()
+                    secureStorage.isUserLogged = false
+                    view.callLogin()
                 } else {
-                    view.showLoginError()
+                    view.showLogoutError()
                 }
             }
-    }
-
-    fun doOnRegister() {
-        view.callRegister()
     }
 }
