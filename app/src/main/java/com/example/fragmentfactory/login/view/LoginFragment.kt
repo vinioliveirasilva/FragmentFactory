@@ -3,11 +3,10 @@ package com.example.fragmentfactory.login.view
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.example.fragmentfactory.R
-import com.example.fragmentfactory.common.BaseActivity
-import com.example.fragmentfactory.common.BaseFragment
+import com.example.common.view.BaseActivity
+import com.example.common.view.BaseFragment
 import com.example.fragmentfactory.home.HomeActivity
 import com.example.fragmentfactory.login.presenter.LoginPresenter
 import com.example.fragmentfactory.register.RegistrationActivity

@@ -1,4 +1,4 @@
-package com.example.fragmentfactory.common
+package com.example.common.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
-import kotlin.properties.Delegates
 
 abstract class BaseFragment(
     @LayoutRes val layoutId: Int

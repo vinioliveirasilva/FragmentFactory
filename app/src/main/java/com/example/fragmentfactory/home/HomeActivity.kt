@@ -7,7 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.example.fragmentfactory.R
-import com.example.fragmentfactory.common.BaseActivity
+import com.example.common.view.BaseActivity
 import com.example.fragmentfactory.home.view.HomeFragment
 import com.example.fragmentfactory.login.LoginActivity
 import org.koin.android.ext.android.inject

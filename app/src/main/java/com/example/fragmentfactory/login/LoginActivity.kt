@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.example.fragmentfactory.R
-import com.example.fragmentfactory.common.BaseActivity
+import com.example.common.view.BaseActivity
 import com.example.fragmentfactory.login.view.LoginFragment
 import org.koin.core.module.Module
 import org.koin.dsl.module

@@ -1,7 +1,7 @@
 package com.example.fragmentfactory.home.view
 
 import com.example.fragmentfactory.R
-import com.example.fragmentfactory.common.BaseFragment
+import com.example.common.view.BaseFragment
 import org.koin.core.module.Module
 import org.koin.dsl.module
 

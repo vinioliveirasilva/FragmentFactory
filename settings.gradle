@@ -1,2 +1,4 @@
+include ':common'
+include ':academia'
 include ':app'
 rootProject.name = "FragmentFactory"
