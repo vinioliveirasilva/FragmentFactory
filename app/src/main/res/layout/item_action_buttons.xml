@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_default_height"
         android:layout_marginHorizontal="16dp"
-        android:text="Botão Primario"
+        android:text="@string/bt_primary_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_default_height"
         android:layout_marginHorizontal="16dp"
-        android:text="Botão Secundario"
+        android:text="@string/bt_secondary_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_primary" />

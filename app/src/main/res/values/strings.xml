@@ -13,4 +13,7 @@
     <string name="bt_register_text">Criar Conta</string>
     <string name="login_email_hint">digite o email</string>
     <string name="login_pass_hint">digite a senha</string>
+    <string name="action_logout">Logout</string>
+    <string name="bt_primary_placeholder">Botão Primario</string>
+    <string name="bt_secondary_placeholder">Botão Secundario</string>
 </resources>

@@ -1,11 +1,13 @@
 package com.example.fragmentfactory.login.presenter
 
 import android.util.Log
+import com.example.fragmentfactory.common.defaultSubscription
+import com.example.fragmentfactory.common.doOnBusinessFailure
+import com.example.fragmentfactory.common.doOnSystemError
+import com.example.fragmentfactory.common.subscribeSafely
 import com.example.fragmentfactory.login.view.LoginFragment
 import com.example.fragmentfactory.main.provider.SecurityStorage
 import com.example.fragmentfactory.network.AuthProvider
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
 
 class LoginPresenter(
     private val view: LoginFragment,
@@ -17,22 +19,18 @@ class LoginPresenter(
 
     fun doOnLogin(email: String, pass: String) {
         authProvider.doLogin(email, pass)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+            .defaultSubscription()
             .doOnSubscribe { view.showLoading() }
             .doOnCompleted { view.hideLoading() }
-            .doOnError { Log.e(tag, "Erro na chamada de rede") }
-            .subscribe {
-                if(it) {
-                    secureStorage.isUserLogged = true
-                    view.callHome()
-                } else {
-                    view.showLoginError()
-                }
+            .doOnSystemError { Log.e(tag, "Erro na chamada de rede") }
+            .doOnBusinessFailure { view.showLoginError() }
+            .subscribeSafely {
+                secureStorage.isUserLogged = true
+                view.callHome()
             }
     }
 
     fun doOnRegister() {
-
+        view.callRegister()
     }
 }

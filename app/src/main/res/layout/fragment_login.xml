@@ -15,96 +15,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_login" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_email_input"
+    <components.input.InputView
+        android:id="@+id/email_input"
         app:layout_constraintTop_toBottomOf="@id/iv_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="24dp"
+        app:title="Email: "
+        app:hint="@string/login_email_hint"
         android:layout_marginTop="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/tv_email_input_hint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:text="Email: "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_email_input"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_email_input_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_password_input"
-        app:layout_constraintTop_toBottomOf="@id/cl_email_input"
+    <components.input.InputView
+        android:id="@+id/password_input"
+        app:layout_constraintTop_toBottomOf="@id/email_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="24dp"
+        app:title="Pass: "
+        app:hint="@string/login_pass_hint"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/tv_password_input_hint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=" Pass: "
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_password_input"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_password_input_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_weight="1"
-            android:inputType="numberPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"/>
 
     <include
         layout="@layout/item_action_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginVertical="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_password_input"
+        app:layout_constraintTop_toBottomOf="@+id/password_input"
         app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#99F5F5F5"
-        android:focusable="true"
-        android:clickable="true"
-        android:visibility="gone">
-
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
