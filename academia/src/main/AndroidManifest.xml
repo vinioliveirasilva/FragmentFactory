@@ -19,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".home.view.home.AddWorkoutActivity"
+            android:theme="@style/Theme.FragmentFactory.NoActionBar" />
     </application>
     <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

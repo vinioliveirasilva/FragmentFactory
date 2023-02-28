@@ -1,3 +1,4 @@
+include ':ui_component'
 include ':common'
 include ':academia'
 include ':app'

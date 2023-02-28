@@ -25,14 +25,14 @@ abstract class BaseFragment(
         return inflater.inflate(layoutId, container, false)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         loadKoinModules(fragmentModules())
-        super.onCreate(savedInstanceState)
+        super.onViewCreated(view, savedInstanceState)
     }
 
-    override fun onDestroy() {
+    override fun onDestroyView() {
         unloadKoinModules(fragmentModules())
-        super.onDestroy()
+        super.onDestroyView()
     }
 
     fun hideLoading() {

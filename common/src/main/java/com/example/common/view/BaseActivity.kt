@@ -22,17 +22,20 @@ abstract class BaseActivity(
     abstract fun activityModules(): Module
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        loadKoinModules(activityModules())
         super.onCreate(savedInstanceState)
         setContentView(layoutId)
         setSupportActionBar(findViewById(R.id.toolbar))
-
         loading = findViewById(R.id.loading)
     }
 
-    override fun onDestroy() {
+    override fun onResume() {
+        loadKoinModules(activityModules())
+        super.onResume()
+    }
+
+    override fun onPause() {
         unloadKoinModules(activityModules())
-        super.onDestroy()
+        super.onPause()
     }
 
     fun hideLoading() {

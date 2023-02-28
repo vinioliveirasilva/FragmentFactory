@@ -1,4 +1,4 @@
-package components.input
+package com.example.ui_component
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,7 +6,6 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
-import com.example.fragmentfactory.R
 
 class InputView(context: Context, attrs: AttributeSet?) : FrameLayout(context, attrs) {
     lateinit var title: String
