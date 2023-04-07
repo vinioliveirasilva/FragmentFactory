@@ -34,6 +34,7 @@ android {
 
 dependencies {
     implementation project(":common")
+    //implementation project(":ui_component")
     // Koin for Android
     implementation "org.koin:koin-android:$koin_version"
     // or Koin for Lifecycle scoping

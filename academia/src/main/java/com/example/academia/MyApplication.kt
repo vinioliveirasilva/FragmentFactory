@@ -11,6 +11,9 @@ class MyApplication : Application() {
         startKoin {
             androidContext(this@MyApplication)
             modules(module {
+                single<WorkoutStorage> {
+                    WorkoutStorageImpl()
+                }
             })
         }
     }

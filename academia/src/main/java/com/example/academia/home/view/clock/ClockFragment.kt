@@ -35,7 +35,7 @@ class ClockFragment : BaseFragment(R.layout.fragment_clock) {
 
     private fun startClock() {
         context?.run {
-            imageWarn.setBackgroundColor(this.getColor(R.color.white))
+            imageWarn.setBackgroundColor(this.getColor(R.color.gray))
         }
         imageWarn.cleanClickListener()
 
@@ -46,7 +46,7 @@ class ClockFragment : BaseFragment(R.layout.fragment_clock) {
 
     private fun warn() {
         context?.run {
-            imageWarn.setBackgroundColor(this.getColor(R.color.gray_dim))
+            imageWarn.setBackgroundColor(this.getColor(R.color.gray_silver))
         }
         vibrate()
         Handler().postDelayed({
