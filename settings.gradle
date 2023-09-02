@@ -1,2 +1,5 @@
+include ':ui_component'
+include ':common'
+include ':academia'
 include ':app'
 rootProject.name = "FragmentFactory"
